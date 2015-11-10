@@ -4,18 +4,6 @@ import os, sys
 from distutils.core import setup, Extension
 
 try:
-	# load py2exe distutils extension, if available
-	import py2exe
-except ImportError:
-	pass
-
-try:
-	import numpy
-except ImportError:
-	print("*** Warning: FontTools needs the numpy library for some operations, see:")
-	print("        http://numpy.scipy.org/")
-
-try:
 	import fontTools
 except ImportError:
 	print("*** Warning: RoboFab needs FontTools for some operations, see:")
@@ -58,7 +46,6 @@ setup(
 		long_description = long_description,
 		
 		packages = [
-			"",
 			"robofab",
 			"robofab.interface",
 			"robofab.interface.mac",
@@ -68,7 +55,6 @@ setup(
 			"robofab.objects",
 			"robofab.pens",
 			"robofab.tools",
-                        "ufoLib",
 		],
 		package_dir = {'': 'Lib'},
 		#extra_path = 'FontTools',
